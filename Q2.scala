@@ -1,17 +1,14 @@
 package LabSheet_10
 
 object Q2 {
-  def main(args: Array[String]): Unit = {
-    val inputWords = List("apple", "banana", "cherry", "date")
-    val totalLetterOccurrences = countLetterOccurrences(inputWords)
-    println(s"Total count of letter occurrences: $totalLetterOccurrences")
+  def countLetterOccurances(mylist:List[String]): Int ={
+    mylist.map(l=>l.length).reduce((x,y)=>x+y)
   }
 
-  def countLetterOccurrences(words: List[String]): Int = {
-    val wordLengths = words.map(_.length)
-    val totalOccurrences = wordLengths.reduce((len1, len2) => len1 + len2)
-    totalOccurrences
+  def main(args: Array[String]) : Unit ={
+    val input = List("apple","banana","cherry","date")
+    val output = countLetterOccurances(input)
+    println(s"Total count of Letters :$output")
   }
 }
-
 
